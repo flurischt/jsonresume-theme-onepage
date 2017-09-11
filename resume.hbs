@@ -36,12 +36,13 @@
       {{#location}}
         <span class='divider'>|</span>
         <span class='address'>
-          {{#if city}}{{city}}{{/if}}{{#if region}}, {{region}}{{/if}}{{#if countryCode}}, {{countryCode}}{{/if}}
+            {{#if address}}{{address}}, {{/if}}{{#if city}}{{postalCode}} {{city}}{{/if}}{{#if region}}, {{region}}{{/if}}{{#if countryCode}}, {{countryCode}}{{/if}}
         </span>
       {{/location}}
     </div>
     {{#if profiles.length}}
       <div id='profilesBlock'>
+          {{#if website}} <span class='url'> <a href='{{website}}'>{{website}}</a> </span> <span class='divider'>|</span> {{/if}}
         {{#each profiles}}
           {{#if url}}
             <span class='url'>
