@@ -1,7 +1,7 @@
 var fs = require("fs");
 var Handlebars = require("handlebars");
 
-COURSES_COLUMNS = 3;
+COURSES_COLUMNS = 1;
 
 PREPEND_SUMMARY_CATEGORIES = [
   "work",
@@ -15,7 +15,7 @@ function validateArray(arr) {
 }
 
 function render(resume) {
-  // Split courses into 3 columns
+  // Split courses into COURSES_COLUMNS columns
   if (validateArray(resume.education)) {
     resume.education.forEach(function(block) {
       if (validateArray(block.courses)) {
